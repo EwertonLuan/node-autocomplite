@@ -10,7 +10,7 @@ Inicie o Mongo db antes de iniciar o server caso esteja usando o local.
 
 Edite as variaveis no arquivo src/config/index.js, insira o link do mongodb e a porta do server:
 
-```sh
+```js
 config.MONGOOSE_URL = 'mongodb://localhost:27017/dito';
 
 config.MONGOOSE_URL_TEST= 'mongodb://localhost:27017/dito_test';
@@ -19,7 +19,7 @@ config.PORT= 4000;
 ```
 
 Dentro da pasta do projeto use o comando:
-```sh
+```
 $ npm install 
 ```
 Inicie o server com o camando:
@@ -37,7 +37,7 @@ Para rodar os testes:
 
 ### Rotas da API
 
-`POST /api/v1/events/`
+**POST /api/v1/events/**
 
 Essa rota aramazena os eventos no banco, deve ser enviado no body as keys event e timestamp. Exemplo:
 
@@ -46,7 +46,7 @@ event: 'buy',
 timestamp: '2016-09-22T16:57:31.231Z'
 ```
 Exemplo de retorno:
-```sh
+```json
 {
     "_id": "5bec39920741dc425b9daad1",
     "event": "sasdhlasdh",
@@ -55,13 +55,13 @@ Exemplo de retorno:
 }
 ```  
 
-`GET /api/v1/events/`
+**GET /api/v1/events/**
 
 Essa rota retorna os itens que estão armazenados no Banco de dados.  
 
 Exemplo de retorno:  
 
-```sh
+```
 {
  "data": [
     {
@@ -74,12 +74,12 @@ Exemplo de retorno:
 }
 ```  
 
-`GET /api/v1/events/autocomplete/:searche`  
+**GET /api/v1/events/autocomplete/:searche**
 
 Envie no minimo dois caracteres para a rota devolver uma lista com os items encontrados.  
 
 Exemplo de retorno:  
-```sh
+```
 {
     "data": [
         "buy",
