@@ -10,7 +10,6 @@ describe('Routes: SiteEvent', () => {
 			});
 	});
     
-	const defaultId = '56cb91bdc3464f14678934ca';
 	const defaultEvent = {
 		event: 'buy',
 		timestamp: '2016-09-22T16:57:31.231Z'
@@ -79,6 +78,7 @@ describe('Routes: SiteEvent', () => {
 			});
 		});
 	});
+
 });
 
 

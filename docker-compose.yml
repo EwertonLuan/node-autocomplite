@@ -1,0 +1,11 @@
+
+version: "3"
+
+services: 
+  dito:
+    image: node_api
+    container_name: dito-api
+    ports:
+      - "4000:4000"
+
+    command: npm start

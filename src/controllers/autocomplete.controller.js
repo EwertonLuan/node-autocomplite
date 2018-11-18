@@ -14,13 +14,14 @@ class Autocomplete {
 						const result = [];
 						/**Verifica se retornou menos dez que itens */
 						if(siteEvent.length <= 9){
+							/**Adiciona apenas dez itens unicos na lista*/
 							for(var i in siteEvent){
 								if(!result.find( list => list === siteEvent[i].event)){
 									result.push(siteEvent[i].event);
 								}
 							}
 						}else{
-							/**Adiciona apenas dez itens na lista  */
+							/**Adiciona apenas dez itens unicos na lista*/
 							for(var i = 0; i <= 9; i++){
 								if(!result.find( list => list === siteEvent[i].event)){
 									result.push(siteEvent[i].event);
