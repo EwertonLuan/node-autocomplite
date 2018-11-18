@@ -15,7 +15,9 @@ class Autocomplete {
 						/**Verifica se retornou menos dez que itens */
 						if(siteEvent.length <= 9){
 							for(var i in siteEvent){
-								result.push(siteEvent[i].event);
+								if(!result.find( list => list === siteEvent[i].event)){
+									result.push(siteEvent[i].event);
+								}
 							}
 						}else{
 							/**Adiciona apenas dez itens na lista  */
@@ -29,7 +31,7 @@ class Autocomplete {
 					});
             
 			} else {            
-				throw "Deve conter mais de dois caracteres";
+				throw "A busca deve conter no minimo dois caracteres";
 			}        
 		}catch(err){
 			res.status(500).json({err: err});

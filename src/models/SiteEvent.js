@@ -6,7 +6,7 @@ const joigoose_mon = require('joigoose')(mongoose);
 
 //creat the object with joi for validate
 const SiteEventJoi = joi.object({
-	event: joi.string().alphanum().min(3).max(30).required(),
+	event: joi.string().alphanum().min(2).max(30).required(),
 	timestamp: joi.date().timestamp().required()
 });
 

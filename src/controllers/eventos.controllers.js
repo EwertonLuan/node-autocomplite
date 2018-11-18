@@ -14,7 +14,8 @@ class SiteEventController {
 	}
     
 	create(req, res) {
-		const siteEvent = new this.SiteEvent(req.body);    
+		const siteEvent = new this.SiteEvent(req.body);  
+		  
 		return siteEvent.save()
 			.then(() => res.status(201).send(siteEvent))
 			.catch(err => res.status(422).send(err.message));

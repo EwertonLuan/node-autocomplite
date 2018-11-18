@@ -8,4 +8,4 @@ setupApp.app_prod().then(app => app.listen(config.PORT, () => {
 ).catch(error => {		
 	console.error(error);		
 	process.exit(1);
-});;
+});

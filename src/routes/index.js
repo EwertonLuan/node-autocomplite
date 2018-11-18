@@ -2,6 +2,5 @@
 import events from './events';
 
 export default (app) => {
-	app.use('/api/v1', events);
-	
+	app.use('/api/v1', events);	
 };

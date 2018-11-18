@@ -34,7 +34,7 @@ describe('Routes: SiteEvent', () => {
     
 	afterEach(()=> Database.SiteEvent.remove({}));
 
-	describe('GET /api/v1', () => {
+	describe('GET /api/v1/events', () => {
 		before(() => {        
 
 			const siteEvent = new Database.SiteEvent(defaultEvent);    
@@ -46,15 +46,16 @@ describe('Routes: SiteEvent', () => {
 		it('should return a list of events', done => {           
         
 			request
-				.get('/api/v1')
+				.get('/api/v1/events')
 				.end((err, res) => {
                 
 					expect(res.body).to.eql([expectedEvent]);
-					done(err);
+					if (err) return done(err);
+					done();
 				});
 		});
 	});
-	describe('POST /api/v1', () => {
+	describe('POST /api/v1/events', () => {
 		context('when posting a event', () => {
 			it('should return a new event with status code 201', done => {
 				const customId = '56cb91bdc3464f14678934ba';
@@ -67,12 +68,13 @@ describe('Routes: SiteEvent', () => {
 
 				};
 				request
-					.post('/api/v1')
+					.post('/api/v1/events')
 					.send(newEvent)
 					.end((err, res) => {
 						expect(res.statusCode).to.eql(201);
 						expect(res.body).to.eql(expectedSavedEvent);
-						done(err);
+						if (err) return done(err);
+						done();
 					});
 			});
 		});

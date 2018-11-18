@@ -1,14 +1,12 @@
 {
-  "name": "backend_api_users",
+  "name": "api_events_e_autocomplite",
   "version": "1.0.0",
-  "description": "API Backend with mongodb",
+  "description": "API para armazenar eventos e enviar uma lista para autocomplite",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec babel-node server.js",
+    "start": "nodemon --exec babel-node server.js",
     "build": "babel src --out-dir dist",
-    "start": "nodemon dist/app.js",
-    "test:integration": "NODE_ENV=test mocha --opts test/integration/mocha.opts test/integration/**/*.test.js",
-    "test:unit": "NODE_ENV=test mocha --opts test/unit/mocha.opts test/unit/**/*.test.js",
+    "test": "NODE_ENV=test mocha --opts test/integration/mocha.opts test/integration/**/*.test.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
@@ -35,7 +33,6 @@
     "joi": "^13.7.0",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.4",
-    "sinon": "^7.1.1",
     "supertest": "^3.3.0"
   }
 }
