@@ -49,7 +49,7 @@ describe('Routes: SiteEvent', () => {
 				.get('/api/v1/events')
 				.end((err, res) => {
                 
-					expect(res.body).to.eql([expectedEvent]);
+					expect(res.body.data).to.eql([expectedEvent]);
 					if (err) return done(err);
 					done();
 				});
