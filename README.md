@@ -2,11 +2,16 @@
 
 ## Instalação e uso
 
-Pré-requisitos Backend: 
+Pré-requisitos Local: 
 * [Node.js](https://nodejs.org/en/)
 * [Mongodb](https://www.mongodb.com/)
 
-Inicie o Mongo db antes de iniciar o server caso esteja usando o local.
+Pré-requisitos com Docker:
+
+* [Docker](https://docs.docker.com/compose/)
+* [Docker-compose](https://www.docker.com/)
+
+Inicie o Mongodb antes de iniciar o server caso esteja usando local.
 
 Edite as variaveis no arquivo src/config/index.js, insira o link do mongodb e a porta do server:
 
@@ -18,21 +23,39 @@ config.MONGOOSE_URL_TEST= 'mongodb://localhost:27017/dito_test';
 config.PORT= 4000;
 ```
 
+### Ambiente Local
+
 Dentro da pasta do projeto use o comando:
 ```
 $ npm install 
 ```
-Inicie o server com o camando:
+Para iniciar o server:
  ```sh
  $ npm start
  ```
-Esse comando vai rodar o projeto com babel e nodemon. 
-
-[Babel.js](https://babeljs.io/) é um JavaScript compiler. Ele pode trasformar um codigo escrito em  especificações ES6 em algo que o Nodejs pode entender totalmente.
 
 Para rodar os testes:
  ```sh
- $ npm start
+ $ npm test
+ ```
+
+### Ambiente com Docker
+
+Configure os arquivos docker-compose com a mesma porta do server, dentro dos arquivos mude "ports" 
+
+Primeiro construa a imagem:
+```
+ $ docker build -t node_api .
+ ```
+
+Para iniciar o server:
+```
+ $ docker-compose up
+ ```
+ 
+ Para rodar os testes:
+```
+ $ docker-compose -f docker-compose.test.yml
  ```
 
 ### Rotas da API
