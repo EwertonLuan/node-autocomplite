@@ -35,14 +35,15 @@ Para rodar os testes:
  $ npm start
  ```
 
-###Rotas da API
+### Rotas da API
 
 `POST /api/v1/events/`
+
 Essa rota aramazena os eventos no banco, deve ser enviado no body as keys event e timestamp. Exemplo:
 
 ```sh
-		event: 'buy',
-		timestamp: '2016-09-22T16:57:31.231Z'
+event: 'buy',
+timestamp: '2016-09-22T16:57:31.231Z'
 ```
 Exemplo de retorno:
 ```sh
@@ -52,12 +53,13 @@ Exemplo de retorno:
     "timestamp": "2016-09-22T16:57:31.231Z",
     "__v": 0
 }
-```
+```  
 
 `GET /api/v1/events/`
-Essa rota retorna os itens que estão armazenados no Banco de dados
 
-Exemplo de retorno:
+Essa rota retorna os itens que estão armazenados no Banco de dados.  
+
+Exemplo de retorno:  
 
 ```sh
 {
@@ -70,15 +72,16 @@ Exemplo de retorno:
     }
  ]
 }
-```
+```  
 
-`GET /api/v1/events/autocomplete/:searche`
-Envie no minimo dois caracteres para a rota devolver uma lista com os items encontrados.
+`GET /api/v1/events/autocomplete/:searche`  
 
-Exemplo de retorno:
+Envie no minimo dois caracteres para a rota devolver uma lista com os items encontrados.  
+
+Exemplo de retorno:  
 ```sh
 {
     "data": [
         "buy",
     ]
-}
+}  
