@@ -60,6 +60,8 @@ Para iniciar o server:
 
 ### Rotas da API
 
+Exemplo de inicio das rotas: **http://localhost:5000**
+
 **POST /api/v1/events/**
 
 Essa rota aramazena os eventos no banco, deve ser enviado no body as keys event e timestamp. Exemplo:
